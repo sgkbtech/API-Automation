@@ -1,0 +1,33 @@
+{  
+   "clientSparkVersion":"1.4.2",
+   "mainClass":"com.ge.current.em.custom.analytics.batch.main.SparkCustomAnalyticsMain",
+   "appResource":"file:/app/em/rules/em-rules-1.0.0.jar",
+   "appArgs":[
+      "--spring.profiles.active=em-colo-stg",
+      "com.ge.current.em.custom.analytics.batch.BasicISparkRuleImpl",
+      "ASSET",
+      "${queryTableName}",
+      "asset",
+      "${ruleName}",
+      "15",
+      "America/Los_Angeles,America/New_York,America/Chicago",
+      "${startTime}",
+      "${endTime}",
+      "UTC"
+   ],
+   "environmentVariables":{  
+      "SPARK_ENV_LOADED":"1"
+   },
+   "action":"CreateSubmissionRequest",
+   "sparkProperties":{  
+      "spark.driver.supervise":"false",
+      "spark.app.name":"${sparkAppName}",
+      "spark.submit.deployMode":"cluster",
+      "spark.cores.max":3,
+      "spark.jars":"file:/app/em/rules/em-rules-1.0.0.jar",
+      "spark.eventLog.enabled":"true",
+      "spark.executor.memory":"4g",
+      "spark.executor.extraClassPath" : "/app/em/rules/ecj-4.4.2.jar",
+      "spark.driver.extraClassPath": "/app/em/rules/ecj-4.4.2.jar"
+   }
+}

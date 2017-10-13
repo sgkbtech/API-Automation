@@ -1,0 +1,22 @@
+{
+  "list":
+  [
+    {
+      "name": "ASSETTYPE2",
+      "type": "ASSET_TYPE",
+      "description": "ASSETTYPE1",
+      "fromDate": "2016-12-01T00:00:00+0000",
+      "thruDate": "9999-12-31T00:00:00+0000",
+      "version": "1.00",
+      "properties": [
+        {
+          "id": "requiredTags",
+          "type": "STRING",
+          "value": [
+            "[{\"name\":\"tag3\",\"writable\":false,\"sourceKey\":\"${tag3id}\",\"type\":\"Number\",\"uom\":\"F\",\"description\":\"Temperature of the air returning from the space to the unit\",\"required\":true},{\"name\":\"tag4\",\"writable\":false,\"sourceKey\":\"${tag4id}\",\"type\":\"Number\",\"uom\":\"F\",\"description\":\"Temperature of the air exiting the unit into the space\",\"required\":true}]"
+          ]
+        }
+      ]
+    }
+  ]
+}

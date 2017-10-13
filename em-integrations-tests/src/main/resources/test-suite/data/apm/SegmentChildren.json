@@ -1,0 +1,8 @@
+{  
+   "list":[  
+      {  
+         "sourceKey":"${apm.assetID}",
+         "classificationCode": "ASSET"
+      }
+   ]
+}

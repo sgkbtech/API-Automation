@@ -1,0 +1,27 @@
+{
+  "list": [
+    {
+      "parentSourceKey": "${apm.siteundersite}",
+      "parentClassificationCode": "${apm.segment.parentType}",
+      "segmentTypeSourceKey": "${apm.segment.segmentType}",
+      "name": "${apm.segment.name}",
+      "description": "Test_segment",
+      "properties": [
+        {
+          "id": "SegmentProp",
+          "value": [
+            5
+          ],
+          "type": "INTEGER"
+        },
+         {
+          "id": "IS_VISUAL",
+          "value": [
+            5
+          ],
+          "type": "INTEGER"
+        }
+      ]
+    }
+  ]
+}

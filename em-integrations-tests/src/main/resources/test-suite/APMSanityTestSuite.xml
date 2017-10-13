@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="APMSanityTest" verbose="1" preserve-order="true">
+	<test name="APMSanityCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.apm.e2e.APMTest">
+		   <methods>
+        		<include name="testAvailabilityAPMServices" />
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+</suite>

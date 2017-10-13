@@ -1,0 +1,1 @@
+RawPoint,Tag Name,Description,Unit of Measure,Required?,Enum,Range @S.GELabSanRamon.AHU~2d1.Return-Temp,indoorLightingStatus,Lighting Status ,enum,Y,On,,lightingStateOverride,Lighting Override,enum,Y,true,

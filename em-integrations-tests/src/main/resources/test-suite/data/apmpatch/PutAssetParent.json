@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "sourceKey": "${apm.update.siteKey}",
+      "classificationCode": "SITE"
+    },
+        {
+      "sourceKey": "${apm.update.segmentKey}",
+      "classificationCode": "SEGMENT"
+    }
+  ]
+}

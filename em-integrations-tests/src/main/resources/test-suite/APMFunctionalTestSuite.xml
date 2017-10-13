@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="APMFunctionalTest" verbose="1" preserve-order="true">
+   <test name="APMHealthCheck">
+		<classes>
+			<class name="com.ge.current.em.automation.apm.e2e.APMTest">
+				<methods>
+					<include name="testAvailabilityAPMServices" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="APMPageAndSortCheck">
+		<classes>
+			<class name="com.ge.current.em.automation.apm.e2e.APMTest">
+				<methods>
+					<include name="testPageParamAPMServices" />
+					<include name="testSortParamAPMServices" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="APMHierarchyCheck">
+		<classes>
+			<class name="com.ge.current.em.automation.apm.e2e.APMTest">
+				<methods>
+					<include name="testNoParentForRootEnterprise" />
+					<include name="testParentForEnterprise" />
+					<include name="testChildrenTypeForEnterprise" />
+					<include name="testChildrenTypeForRegion" />
+					<include name="testChildrenTypeForSite" />
+					<include name="testChildrenTypeForSegment" />
+					<include name="testParentTypeForEnterprise" />
+					<include name="testParentTypeForRegion" />
+					<include name="testParentTypeForSite" />
+					<include name="testParentTypeForSegment" />
+					<include name="testParentTypeForAsset" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="APMDataValidation">
+		<classes>
+			<class name="com.ge.current.em.automation.apm.e2e.APMTest">
+				<methods>
+					<include name="testNamingPatternForAsset" />
+				 	<include name="testDataTypeForTag" />
+					<include name="testTypeCategoriesForType" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

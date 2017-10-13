@@ -1,0 +1,11 @@
+{
+	"list": [
+        {
+          "id": "name",
+          "value": [
+            "puttest"
+          ],
+          "type": "STRING"
+        }
+]
+}

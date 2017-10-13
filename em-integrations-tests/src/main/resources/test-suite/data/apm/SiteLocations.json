@@ -1,0 +1,24 @@
+{
+	"list": [
+  {
+    "name": "S2" ,
+    "locationType": "OTHER",
+    "areaInSqft": 1,
+    "postalAddress": {
+      "streetLine1": "2623 Camino Ramon",
+      "streetLine2": "",
+      "city": "San Ramon",
+      "state": "CA",
+      "postalCode": "94583",
+      "country": "USA"
+    },
+    "geoCoordinates": {
+      "latitude": 37.7673179,
+      "longitude": -121.9584364,
+      "elevation": 450,
+      "timezone": "Pacific/Midway"
+    }
+  }
+  
+]
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MinutesAggregationTest" verbose="1" preserve-order="true">
+	<test name="AHUMinCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.AggregationTest">
+		   <methods>
+        		<include name="testMetadataInMinAggregationForFE2EAHU"/>
+        		<include name="testMetadataInMinAggregationForFE2EAHUSite"/>
+        		<include name="testMetadataInMinAggregationForFE2EAHUEnterprise"/>
+        		<include name="testMetadataInMinAggregationForFE2EAHUSegment"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+	<test name="SubmeterMinCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.AggregationTest">
+		   <methods>
+        		<include name="testMetadataInMinAggregationForFE2ESubmeter"/>
+        		<include name="testMetadataInMinAggregationForFE2ESubmeterSite"/>
+        		<include name="testMetadataInMinAggregationForFE2ESubmeterEnterprise"/>
+        		<include name="testMetadataInMinAggregationForFE2ESubmeterSegment"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+</suite>

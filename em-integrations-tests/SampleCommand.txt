@@ -1,0 +1,18 @@
+mvn clean test -Dsuite=JaceUITestSuite  -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMSanityTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMFunctionalTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMDataCreationTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMHierarchyTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMPutPatchTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=CSVGeneratorSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=FunctionalE2EAggregationTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=LoadTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMHierarchyTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=APMPutPatchTestSuite -DenvType=colo -P integrationtest
+mvn clean test -Dsuite=UIFunctionalTestSuite -DenvType=colo -P integrationtest
+
+mvn clean test -Dsuite=APMDataCreationTestSuite -DenvType=test -P integrationtest
+mvn clean test -Dsuite=APMPutPatchTestSuite -DenvType=test -P integrationtest
+mvn clean test -Dsuite=APMHierarchyTestSuite -DenvType=test -P integrationtest
+
+mvn clean test -Dsuite=APMTestSuite -DenvType=vpc_dev -P integrationtest

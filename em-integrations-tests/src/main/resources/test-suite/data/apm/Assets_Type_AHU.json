@@ -1,0 +1,24 @@
+{
+	"list": [
+		{
+		"name": "AHU",
+      	"type": "ASSET_TYPE",
+      	"properties": [
+      	{
+	      "id": "haystackMapping",
+	      "type": "STRING",
+	      "value": [
+	        "[{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/dischargeAirTempSensor\",\"pointName\":\"dischargeAirTempSensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/dischargeAirFanCmd\",\"pointName\":\"dischargeAirFanCmd\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/returnAirTempSensor\",\"pointName\":\"returnAirTempSensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/outsideAirTempSensor\",\"pointName\":\"outsideAirTempSensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/zoneAirTempSensor\",\"pointName\":\"zoneAirTempSensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/zoneAirHumiditySensor\",\"pointName\":\"zoneAirHumiditySensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/zoneAirCo2Sensor\",\"pointName\":\"zoneAirCo2Sensor\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/ahuModeSp\",\"pointName\":\"ahuModeSp\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/ahuHeatStage1\",\"pointName\":\"ahuHeatStage1\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/ahuHeatStage2\",\"pointName\":\"ahuHeatStage2\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/ahuCoolStage1\",\"pointName\":\"ahuCoolStage1\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/ahuCoolStage2\",\"pointName\":\"ahuCoolStage2\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/zoneAirTempHeatingSp\",\"pointName\":\"zoneAirTempHeatingSp\"}, {\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/alarmPoint\",\"pointName\":\"alarmPoint\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/alarmPoint\",\"zoneAirTempCoolingSp\":\"zoneAirTempCoolingSp\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/alarmPoint\",\"currentSensorValue\":\"currentSensorValue\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/alarmPoint\",\"airFanCmd\":\"airFanCmd\"},{\"pointId\":\"/Drivers/BacnetNetwork/${csv.siteName}_AHU/points/zoneAirTempEffectiveSp\",\"pointName\":\"zoneAirTempEffectiveSp\"}]"
+	      ]
+   		 },
+        	{
+	          "id": "requiredTags",
+	          "type": "STRING",
+	          "value": [
+	          	"${apm.tag.value}"
+         	   ]
+        	}
+      	]
+	}
+	]
+}

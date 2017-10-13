@@ -1,0 +1,11 @@
+{
+  "list": [
+        {
+          "id": "tariffId",
+          "type": "LONG",
+          "value": [
+            "NAME_${apm.patchTest}"
+          ]
+        }
+     ] 
+}

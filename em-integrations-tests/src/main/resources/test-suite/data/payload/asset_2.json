@@ -1,0 +1,34 @@
+{
+
+  "list":
+  [
+
+    {
+
+      "classificationCode": "ASSET",
+      "catalog": {
+        "model": "ASSETTYPE2_MODEL_1",
+        "type": "ASSETTYPE2"
+      },
+      "name": "ASSETTYPE2~2d1",
+      "active": true,
+      "fromDate": "2016-09-23T00:00:00+0000",
+      "thruDate": "9999-12-31T00:00:00+0000",
+      "identifier": {
+        "externalRefId": "ASSETTYPE2",
+        "serialNumber": "sunsetASSETTYPE2"
+      },
+      "parentClassificationCode": "SITE",
+      "parentSourceKey": "${siteid}",
+      "properties": [
+        {
+          "id": "MODEL_SOURCEKEY",
+          "type": "STRING",
+          "value": [
+            "${ASSETTYPE2_MODEL_1id}"
+          ]
+        }
+      ]
+    }
+  ]
+}

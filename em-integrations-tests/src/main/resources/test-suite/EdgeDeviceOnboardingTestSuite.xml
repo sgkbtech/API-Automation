@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EdgeDeviceOnboardingTest" verbose="1" preserve-order="true">
+	<test name="Functional Test">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.OnboardingTest">
+        </class>	
+    </classes>
+	</test>
+</suite>
+
+

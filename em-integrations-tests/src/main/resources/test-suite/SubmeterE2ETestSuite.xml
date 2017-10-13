@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SubmeterNormalizationTest" verbose="1" preserve-order="true">
+	<test name="SubmeterNormalizationCheck15Minutes">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.NormalizationTest">
+		   <methods>
+        		<include name="testNormalizationFE2ESubmeterAssetIsPresent"/>
+        		<include name="testNormalizationFE2ESubmeterSiteIsPresent"/>
+        		<include name="testNormalizationFE2ESubmeterEnterpriseIsPresent"/>
+        		<include name="testNormalizationFE2ESubmeterAssetTypeIsPresent"/>
+        		<include name="testNormalizationFE2ESubmeterSegmentIsPresent"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+	<test name="SubmeterNormalizationCheckHour">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.NormalizationTest">
+		   <methods>
+        		<include name="testNormalizationFE2ESubmeterAssetIsPresentHour"/>
+        		<include name="testNormalizationFE2ESubmeterSiteIsPresentHour"/>
+        		<include name="testNormalizationFE2ESubmeterEnterpriseIsPresentHour"/>
+        		<include name="testNormalizationFE2ESubmeterAssetTypeIsPresentHour"/>
+        		<include name="testNormalizationFE2ESubmeterSegmentIsPresentHour"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+</suite>
+
+

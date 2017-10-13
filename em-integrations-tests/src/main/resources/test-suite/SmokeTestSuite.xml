@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EMTest" verbose="1" preserve-order="true">
+	<parameter name="config-file" value="lab.configuration.properties/"/>
+
+<test name="APMTest">
+		<packages>
+			<package name="com.ge.current.em.*" />
+		</packages>
+    <classes>
+        <class name="com.ge.current.em.APMTest"/>
+    </classes>
+	</test>
+    <test name="AggregationTest">
+        <packages>
+            <package name="com.ge.current.em.*" />
+        </packages>
+        <classes>
+            <class name="com.ge.current.em.AggregationTest"/>
+        </classes>
+    </test>
+    <test name="UIWidgets">
+        <packages>
+            <package name="com.ge.current.em.*" />
+        </packages>
+        <classes>
+            <class name="com.ge.current.em.UIWidgetsTest"/>
+        </classes>
+    </test>
+    <test name="RabbitMQTest">
+        <packages>
+            <package name="com.ge.current.em.*" />
+        </packages>
+        <classes>
+            <class name="com.ge.current.em.DataFlowTest"/>
+        </classes>
+    </test>
+</suite>
+
+

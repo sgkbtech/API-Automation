@@ -1,0 +1,9 @@
+{  
+   "list":[  
+      {  
+         "name":"${apm.newEnterprise}",
+         "parentSourceKey": "${apm.NonROOT_ENTERPRISE}",
+     	 "parentClassificationCode": "ENTERPRISE"
+      }
+   ]
+}

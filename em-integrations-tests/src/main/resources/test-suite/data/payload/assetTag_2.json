@@ -1,0 +1,23 @@
+{
+  "list":
+  [
+    {
+
+      "externalRefId": "abc2",
+      "tagTypeSourceKey": "${tag3id}",
+      "name": "abc2",
+      "uom": "F",
+      "dataType": "NUMBER",
+      "properties": []
+    },
+    {
+
+      "externalRefId": "abc2",
+      "tagTypeSourceKey": "${tag4id}",
+      "name": "abc3",
+      "uom": "F",
+      "dataType": "NUMBER",
+      "properties": []
+    }
+  ]
+}

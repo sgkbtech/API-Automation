@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="APMComponentTestSuite" verbose="1" preserve-order="true">
+ 	
+	<test name="APMHierarchy">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.hierarchytesting.APMHierarchy">
+		    	<methods>
+                   	<include name="testEnterpriseCanExistWithoutAParent" />
+				    <include name="testEnterpriseParentCanBeRootEnterprise" />
+				    <include name="testSiteParentCanBeOfEnterprise" />
+				    <include name="testRegionParentCanBeEnterprise" />
+				    <include name="testSiteParentCanBeRegion" />
+				    <include name="testSiteParentCanBeSite" />
+				    <include name="testCreateTagTypes" />
+				    <include name="testCreateSegmentTypeUnderRootEnterprise" />
+				    <include name="testCreateAssetType" />
+				    <include name="testCreateAssetModelType" />
+				    <include name="testCreatingAssetUnderSite" />
+				    <include name="testCreatingSiteGateway" />
+				    <include name="testSegmentParentCanbeSite" />
+				    <include name="testSegmentParentCanBeSegment" />
+				    <include name="testCreatingAssetUnderSegment" />
+				    <include name="testCreatingTagUnderSegment" />
+				    <include name="testCreatingTagsUnderSite" />
+				    <include name="testCreateTagUnderEnterprise" />
+				    <include name="testRegionParentCanBeRegion"/>
+		    	</methods>
+		   	</class>
+		  </classes>
+		 </test>
+	
+</suite>

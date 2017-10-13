@@ -1,0 +1,12 @@
+{
+	"list": [
+    {
+    
+      "id": "lastName",
+      "type": "STRING",
+      "value": [
+        "NAME_${apm.patchTest}"
+      ]
+    }
+]
+}

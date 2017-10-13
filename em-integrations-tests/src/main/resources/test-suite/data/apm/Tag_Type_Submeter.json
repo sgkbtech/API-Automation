@@ -1,0 +1,24 @@
+{
+	"list": [
+		{
+		 "name": "zoneElecMeterEnergySensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneElecMeterPowerSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneElecMeterCurrentSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneElecMeterPfSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneElecMeterVoltSensor",
+      	 "type": "TAG_TYPE"
+		}
+	]
+}

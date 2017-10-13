@@ -1,0 +1,27 @@
+{
+"list": [
+    {
+           "name": "${apm.asset.name}",
+           "gatewaySourceKey": "${apm.asset.gatewaySourceKey}",
+           "identifier": {
+                        "serialNumber": "${dummy}",
+                        "virtualSerialNumber": "02233440",
+                        "macAddress": "si20:6t04:dr34",
+                        "externalRefId": "EXT REF ID"
+           },
+           "catalog": {
+                        "type": "AHU",
+                        "model": "AHU_MODEL"
+           },
+            "properties": [
+	    {
+	      "id": "haystackMapping",
+	      "type": "STRING",
+	      "value": [
+	        "[{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/dischargeAirTempSensor\",\"pointName\":\"dischargeAirTempSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/dischargeAirFanCmd\",\"pointName\":\"dischargeAirFanCmd\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/returnAirTempSensor\",\"pointName\":\"returnAirTempSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/outsideAirTempSensor\",\"pointName\":\"outsideAirTempSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/zoneAirTempSensor\",\"pointName\":\"zoneAirTempSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/zoneAirHumiditySensor\",\"pointName\":\"zoneAirHumiditySensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/zoneAirCo2Sensor\",\"pointName\":\"zoneAirCo2Sensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/ahuModeSp\",\"pointName\":\"ahuModeSp\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_AHU/points/alarmPoint\",\"pointName\":\"alarmPoint\"}]"
+	      ]
+	    }
+	  ]
+    }
+ ]
+}    

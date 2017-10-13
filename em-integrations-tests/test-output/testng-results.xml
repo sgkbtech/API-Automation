@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11640" started-at="2017-05-24T18:25:21Z" finished-at="2017-05-24T18:25:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11640" started-at="2017-05-24T18:25:21Z" finished-at="2017-05-24T18:25:33Z">
+      <class name="com.ge.current.em.automation.apm.enterprise.EnterpriseTest">
+        <test-method status="PASS" signature="initFramework(java.lang.String, java.lang.Boolean)[pri:0, instance:com.ge.current.em.automation.apm.enterprise.EnterpriseTest@3c22fc4c]" name="initFramework" is-config="true" duration-ms="18" started-at="2017-05-24T14:25:21Z" finished-at="2017-05-24T14:25:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[vpc_dev]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initFramework -->
+        <test-method status="PASS" signature="setDuration(java.lang.String)[pri:0, instance:com.ge.current.em.automation.apm.enterprise.EnterpriseTest@3c22fc4c]" name="setDuration" is-config="true" duration-ms="1" started-at="2017-05-24T14:25:21Z" finished-at="2017-05-24T14:25:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDuration -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ge.current.em.automation.apm.enterprise.EnterpriseTest@3c22fc4c]" name="setUp" is-config="true" duration-ms="9090" started-at="2017-05-24T14:25:21Z" finished-at="2017-05-24T14:25:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testEnterpriseUnderRootEnterprise()[pri:0, instance:com.ge.current.em.automation.apm.enterprise.EnterpriseTest@3c22fc4c]" name="testEnterpriseUnderRootEnterprise" duration-ms="2529" started-at="2017-05-24T14:25:30Z" finished-at="2017-05-24T14:25:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEnterpriseUnderRootEnterprise -->
+      </class> <!-- com.ge.current.em.automation.apm.enterprise.EnterpriseTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

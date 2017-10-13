@@ -1,0 +1,52 @@
+RawPoint,Tag Name,Description,Unit of Measure,Required?,Enum,Range 
+@S.GELabSanRamon.AHU~2d1.Return-Temp,dischargeAirTempSensor,Temperature of air exiting unit into space,C‚ç or F‚ç,Y,,"60,70"
+,dischargeAirHumiditySensor,Humidity of air exiting unit into space,%RH,N,,"0,100"
+,dischargeAirPressureSensor,Pressure of air exiting unit into space,kPa,N,,"0,100"
+,dischargeAirFlowSensor,Rate of volume of air exiting unit into space,cfm or L/s,N,,"0,15"
+@S.GELabSanRamon.AHU~2d1.Fan-Status,dischargeAirFanCmd,Command status of discharge fan,enum,Y,"On,Off",
+,dischargeAirFanSensor,Differential pressure across the fan,boolean or inH___O or kPa,N,,
+@S.GELabSanRamon.AHU~2d1.Supply-Temp,returnAirTempSensor,Temperature of air entering unit from space,C‚ç or F‚ç,Y,,"0,100"
+,returnAirHumiditySensor,Humidity of air entering unit from space,%RH,N,,"0,100"
+,returnAirPressureSensor,Pressure of air entering unit from space,kPa,N,,"0,100"
+,returnAirFlowSensor,Rate of volume of air entering unit from space,cfm or L/s,N,,"0,100"
+,returnAirCo2Sensor,CO2 in air entering unit from space,ppm,N,,"0,100"
+,returnAirFanCmd,Command status of return fan,boolean or %,N,,"0,100"
+,returnAirDamperCmd,Command status of the return damper,%,N,,"0,100"
+,mixedAirTempSensor,Temperature of mixed outside and return air,C‚ç or F‚ç,N,,"0,100"
+@S.GELabSanRamon.AHU~2d1.oaTemp,outsideAirTempSensor,Temperature of outside air entering unit,C‚ç or F‚ç,Y,,"0,100"
+,outsideAirHumiditySensor,Humidity of outside air entering unit,%RH,N,,"0,100"
+,outsideAirPressureSensor,Pressure of outside air entering unit,kPa,N,,"0,100"
+,outsideAirFlowSp,Rate of volume of outside air entering unit,cfm or L/s,N,,"0,100"
+,outsideAirDamperCmd,Command status of outside air damper,%,N,,"0,100"
+,exhaustAirFanCmd,Command status of exhaust fan,boolean or %,N,,"0,100"
+,exhaustAirDamperCmd,Command status of exhaust air damper,%,N,,"0,100"
+,coolStageCmd,Cooling stage command,1 or 2 etc,N,,"1,5"
+,heatStageCmd,Heating stage command,1 or 2 etc,N,,"1,5"
+,humidifierCmd,Command status of the humidifier,boolean,N,,
+,filterSensor,Differential pressure across the filter‚_,boolean or inH___O or kPa,N,,
+,freezeStatSensor,indicating the presence of a freezing condition,boolean,N,,
+,heatWheelCmd,Command status of the heat wheel,boolean,N,,
+,faceBypassCmd,Indicates if air flow is by-passing the heating/cooling elements,boolean or %,N,,
+,bypassDamperCmd,Command status of bypass damper,%,N,,"0,100"
+@S.GELabSanRamon.AHU~2d1.roomTemp,zoneAirTempSensor,Temperature of space,C‚ç or F‚ç,Y,,"80,90"
+@S.GELabSanRamon.AHU~2d1.EffectiveSp,zoneAirTempEffectiveSp,Effective setpoint for space,C‚ç or F‚ç,Y,,"70,70"
+,zoneAirTempOccCoolingSp,Occupied cooling setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+,zoneAirTempOccHeatingSp,Occupied heating setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+,zoneAirTempUnoccCoolingSp,Unoccupied cooling setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+,zoneAirTempUnoccHeatingSp,Unoccupied heating setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+,zoneAirTempStandbyCoolingSp,Standby cooling setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+,zoneAirTempStandbyHeatingSp,Standby heating setpoint for the space,C‚ç or F‚ç,N,,"0,100"
+@S.GELabSanRamon.AHU~2d1.Humidity,zoneAirHumiditySensor,Humidity of air in the space,%RH,Y,,"0,100"
+@S.GELabSanRamon.AHU~2d1.CO2,zoneAirCo2Sensor,CO2 in the space,ppm,Y,,"0,100"
+,zoneAirCo2Sp,Limit of CO2 in the space,ppm,N,,"0,100"
+@S.GELabSanRamon.AHU~2d1.Oper-Mode,ahuModeSp,AHU operating mode,enum,Y,"Off,Cooling,Heating",
+@S.GELabSanRamon.AHU~2d1.heatStage1,heatStage1,Heating stage indicator,On or Off,Y (only for demo),On,
+@S.GELabSanRamon.AHU~2d1.heatStage2,ahuHeatStage2,Heating stage indicator,On or Off,Y‚_(only for demo),,
+,ahuHeatStage3,Heating stage indicator,On or Off,N,,
+,ahuHeatStage4,Heating stage indicator,On or Off,N,,
+@S.GELabSanRamon.AHU~2d1.coolStage1,coolStage1,Cooling stage indicator,On or Off,Y‚_(only for demo),On,
+@S.GELabSanRamon.AHU~2d1.coolStage2,ahuCoolStage2,Cooling stage indicator,On or Off,Y‚_(only for demo),,
+,ahuCoolStage3,Cooling stage indicator,On or Off,N,,
+,ahuCoolStage4,Cooling stage indicator,On or Off,N,,
+@S.GELabSanRamon.AHU~2d1.AlarmStatus,alarmPoint,Shows if alarm,enum,Y,"Normal,Alarm",
+,hvacStateOverride,Override HVAC State,enum,Y,TRUE,

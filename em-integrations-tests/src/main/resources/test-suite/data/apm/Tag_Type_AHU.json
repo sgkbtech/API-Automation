@@ -1,0 +1,40 @@
+{
+	"list": [
+		{
+		 "name": "dischargeAirTempSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "dischargeAirFanCmd",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "returnAirTempSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "outsideAirTempSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneAirTempSensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneAirHumiditySensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "zoneAirCo2Sensor",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "ahuModeSp",
+      	 "type": "TAG_TYPE"
+		},
+		{
+		 "name": "alarmPoint",
+      	 "type": "TAG_TYPE"
+		}
+	]
+}

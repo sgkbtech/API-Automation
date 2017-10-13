@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EMJaceIntegrationTest" verbose="1" preserve-order="true">
+	<test name="AggregationHourlyHealthCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.Ingestion.RulesTest">
+		   <methods>
+        		<include name="testTooHotTHresholdAbsoluteForAHUIsTriggered" />
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+</suite>
+
+
+ 

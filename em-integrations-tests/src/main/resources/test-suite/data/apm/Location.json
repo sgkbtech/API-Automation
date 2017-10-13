@@ -1,0 +1,32 @@
+{
+  "areaInSqft": 100,
+  "classificationCode": "SPACE",
+  "description": "Test_Location1",
+  "externalRefId": "Test1",
+  "geoCoordinates": {
+    "elevation": 0,
+    "latitude": 37.7639,
+    "longitude": -121.9132,
+    "timezone": "Pacific/Midway"
+  },
+  "localCoordinates": {
+    "angle": 0,
+    "elevation": 0,
+    "horizontalRange": 45,
+    "verticalRange": 12
+  },
+  "locationType": "BUILDING",
+  "name": "Test_location",
+  "postalAddress": {
+    "streetLine1": "2123 Main",
+      "streetLine2": "3",
+      "city": "San Ramon",
+      "state": "CA",
+      "region": "WEST",
+      "postalCode": "94582",
+      "country": "USA"
+  },
+  "properties": [
+   
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="RulesTestSuite" verbose="1" preserve-order="true">
+    <test name="RulesTests">
+        <classes>
+
+            <class name="com.ge.current.em.automation.rules.RulesTest">
+                <methods>
+                    <include name="testRules" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

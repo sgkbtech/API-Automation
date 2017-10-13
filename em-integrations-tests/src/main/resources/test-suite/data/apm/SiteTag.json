@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "tagTypeSourceKey": "${apm.dischargeAirTempSensor.tagtype}",
+      "externalRefId": "externalRefId",
+      "name": "dischargeAirTempSensor",
+      "description": "dischargeAirTempSensor",
+      "dataType": "NUMBER",
+      "isRequired": false ,
+      "isWritable" : true ,
+      "uom": "CÃ«Â� or FÃ«Â�",
+      "resourceUri": "www.uri.com",
+      "properties": [
+        {
+          "id": "Accumulated",
+          "value": [
+            15
+          ],
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ]
+}

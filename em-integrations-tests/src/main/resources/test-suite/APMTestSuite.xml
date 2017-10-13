@@ -1,0 +1,101 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="APMTestSuite" verbose="1" preserve-order="true">
+ 		<test name="APMEnterprise">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.enterprise.EnterpriseTest">
+		    	<methods>
+		    		<include name="testEnterpriseUnderRootEnterprise"></include>
+		    		<include name="testEnterpriseProperties"></include>
+		    		<include name="testCreateTagType"></include>
+		    		<include name="testCreateAssetType"></include>
+		    		<include name="testCreateSegmentType"></include>
+		    		<include name="testCreateTagUnderEnterprise"></include>
+		    		<include name="testCreateEnterpriseUnderSite"></include>
+		    		<include name="testCreateEnterpriseUnderSegment"></include>
+		    		<include name="testCreateEnterpriseUnderRegion"></include>
+		    		<include name="testCreateTagTypeWithoutDataType"></include>
+		    	</methods>
+		   	</class>
+		  </classes>
+		 </test>
+		 <test name="APMSite">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.site.SiteTest">
+		    	<methods>
+		    		<include name="testCreateSiteUnderEnterprise"></include>
+		    		<include name="testSiteProperties"></include>
+		    		<include name="testCreateSiteUnderSite"></include>
+		    		<include name="testCreateSiteUnderRegion"></include>
+		    		<include name="testSiteGatewayUnderSite"></include>
+		    		<include name="testGetSiteLocations"></include>
+		    		<include name="testGetSiteDescendants"></include>
+		    		<include name="testCreateSiteUnderSegment"></include>
+		    		<include name="testCreateSiteWithoutParent"></include>
+		    	</methods>
+		   	</class>
+		  </classes>
+		 </test>
+		 <test name="APMRegion">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.region.RegionTest">
+		    	<methods>
+		    		<!-- <include name="testRegionProperties"></include> -->
+		    		<include name="testCreateRegionUnderEnterprise"></include>
+		    		<include name="testCreateRegionUnderRegion"></include>
+		    		<include name="testCreateRegionUnderSite"></include>
+		    		<include name="testCreateRegionUnderSegment"></include>
+		    		<include name="testCreateRegionWithoutParent"></include>
+		    	</methods>
+		   	</class>
+		  </classes>
+		 </test> 
+		  <test name="APMSegment">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.segment.SegmentTest">
+		    	<methods>
+		    		<include name="testSegmentProperties"></include>
+		    		<include name="testCreateSegmentUnderSite"></include>
+		    		<include name="testCreateSegmentUnderSegment"></include>
+		    		<include name="testPatchSegmentChildren"></include>
+		    		<include name="testPutSegmentChildren"></include>
+		    		<include name="testCreateSegmentWithoutParent"></include>
+		       </methods>
+		   	</class>
+		  </classes>
+		 </test> 
+		 <test name="APMAsset">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.asset.AssetTest">
+		    	<methods>
+		    		<include name="testAssetProperties"></include>
+		    		<include name="testCreateAssetUnderSite"></include>
+		    		<include name="testCreateAssetUnderSegment"></include>
+		    		<include name="testGetAssetParents"></include>
+		    		<include name="testCreateAssetWithoutGatewayInfo"></include>
+		       </methods>
+		   	</class>
+		  </classes>
+		 </test> 
+		 <test name="APMTag">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.tag.TagTest">
+		    	<methods>
+		    		<include name="testTagProperties"></include>
+		    		<include name="testCreateTagUnderEnterprise"></include>
+		    		<include name="testCreateTagUnderSite"></include>
+		    		<include name="testCreateTagUnderSegment"></include>
+		    		<include name="testCreateTagUnderAsset"></include>
+		       </methods>
+		   	</class>
+		  </classes>
+		 </test> 
+		 <test name="APMType">
+		  <classes>
+		   	<class name="com.ge.current.em.automation.apm.type.TypeTest">
+		    	<methods>
+		    		<include name="testTypeProperties"></include>
+		       </methods>
+		   	</class>
+		  </classes>
+		 </test> 
+</suite>

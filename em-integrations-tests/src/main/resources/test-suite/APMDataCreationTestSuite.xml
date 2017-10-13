@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="APMDataCreationTest" verbose="1" preserve-order="true">
+	<test name="APMTestPostiveScenario" >
+		<classes>
+			<class name="com.ge.current.em.automation.apm.e2e.APMPostTest">
+				<methods>
+					<include name="postEnterprisewithvalidinputs" />
+					<include name="creatingSiteswithvalidinputs" />
+					<include name="creatingAssetwithvalidinputs" />
+					<include name="createAssetTypeValidInputs" />
+					<include name="creatingSiteGatewaywithvalidinputs" />
+					<include name="createAssetModelTypeValidInputs" />
+					<include name="creatingRegionwithvalidinputs" />
+					<include name="creatingSegmentwithvalidinputs" />
+					<include name="createTagTypes" />
+					<include name="creatingLocationwithvalidinputs" />
+					<include name="creatingSitetagswithvalidinputs" />
+					<include name="postEnterpriseTagwithvalidinputs"/>
+					<include name="creatingSegmentTagwithvalidinputs"/>
+					<include name="bulkDataCreation"/>
+					<include name="creatingAssetUnderSegment"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

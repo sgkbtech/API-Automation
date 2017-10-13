@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="BRCostSuite" verbose="1" preserve-order="true">
+	<test name="CostDataTest">
+		<classes>
+			<class name="com.ge.current.em.automation.br.cost.CostDataTest">
+				<methods>
+					<include name="testPostCostDataIntoGT" />
+					<include name="testGTGetEvents" />
+				</methods>
+			</class>
+			<class name="com.ge.current.em.automation.br.cost.WorkflowStatusTest">
+				<methods>
+					<include name="testPostWorkflowstatus" />
+					<include name="testGetWorkflowstatus" />
+					<include name="testDeleteWorkflowstatus" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="CostCalculatorTest">
+		<classes>
+			<class name="com.ge.current.em.automation.br.cost.TariffsTest">
+				<methods>
+					<include name="testGetTariffs" />
+					<include name="testGetTariffsBySite" />
+					<include name="testSearchTariffs" />
+				</methods>
+			</class>
+			<class name="com.ge.current.em.automation.br.cost.CostCalculatorTest">
+				<methods>
+					<include name="testCostCalculatorOnDemand" />
+				</methods>
+			</class>
+			<class name="com.ge.current.em.automation.br.cost.CostDataDeleteTest">
+				<methods>
+					<include name="testGTDeleteEvents" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

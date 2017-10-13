@@ -1,0 +1,12 @@
+RawPoint,Tag Name,Description,Unit of Measure,Required?,Enum,Range 
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterLeavingTempSensor,condenserWaterLeavingTempSensor,,CêÓ‚ç or FêÓ‚ç,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterLeavingTempSp,condenserWaterLeavingTempSp,,CêÓ‚ç or FêÓ‚ç,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterLeavingFlowSensor,condenserWaterLeavingFlowSensor,,cfm,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterLeavingPressureSensor,condenserWaterLeavingPressureSensor,,kPa,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterEnteringTempSensor,condenserWaterEnteringTempSensor,,CêÓ‚ç or FêÓ‚ç,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterEnteringFlowSensor,condenserWaterEnteringFlowSensor,,cfm,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/condenserWaterEnteringPressureSensor,condenserWaterEnteringPressureSensor,,kPa,Y,,"77,99"
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/fanCmd,fanCmd,,boolean,Y,,
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/fanSensor,fanSensor,,boolean,Y,,
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/faultStatus,faultStatus,,boolean,Y,,
+/Drivers/ModbusAsyncNetwork/NormAutoAsset_001/points/zoneElecMeterEnergySensor,zoneElecMeterEnergySensor,,kWh,Y,,"1,3"

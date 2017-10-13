@@ -1,0 +1,29 @@
+{
+  "list": [{
+"name": "zoneElecMeterEnergySensor",
+"sourceKey": "${apm.zoneElecMeterEnergySensor.tagtype}",
+"description": "kilowatt hour reading on submeter",
+"type": "NUMERIC",
+"required": true,
+"writable": true,
+"uom": "kWh",
+"allowed_values": null,
+"minValue": 0,
+"maxValue": 2000,
+"step": ""
+},
+{
+"name": "zoneElecMeterPowerSensor",
+"sourceKey": "${apm.zoneElecMeterPowerSensor.tagtype}",
+"description": "Kilowatt draw through submeter",
+"type": "NUMERIC",
+"required": true,
+"writable": true,
+"uom": "kW",
+"allowed_values": null,
+"minValue": 0,
+"maxValue": 2000,
+"step": ""
+}
+]
+}

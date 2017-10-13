@@ -1,0 +1,6 @@
+RawPoint,Tag Name,Description,Unit of Measure,Required?,Enum,Range 
+,zoneElecMeterEnergySensor,kilowatt hour reading on submeter,kWh,Y,,"0,1000000"
+,zoneElecMeterPowerSensor,Kilowatt draw through submeter,kW,Y,,"0,100000"
+,zoneElecMeterCurrentSensor,Current draw through submeter,A,Y,,"0,100000"
+,zoneElecMeterPfSensor,Power factor of submeter,kW/kVA,Y,,"0,1"
+,zoneElecMeterVoltSensor,Voltage draw through submeter,V,Y,,"0,100"

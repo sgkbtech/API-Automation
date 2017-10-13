@@ -1,0 +1,35 @@
+{
+	"enterpriseId": "ENTERPRISE_b47b6a15-b6c1-3fb5-bf95-8db53e321471",
+	"siteId": "SITE_59927fe2-409d-3200-9de3-666806dc8546",
+	"startTime": 1451624400000,
+	"endTime": 1454302800000,
+	"activationDate": 1451624400000,
+	"timeZone": "America/Chicago",
+	"entities": [
+		{
+		"parentSourceKey": "SEGMENT_88ee4bfb-27a8-30e3-9058-03b3f15d599f",
+		"dataPriority": "AUTOMATION",
+		"utilityMeterConnectionType": [
+			"SECONDARY"
+		],
+		"childSourceKeys": [
+			"SEGMENT_8a923e2f-678f-3ae9-af39-5c169e5ec167",
+			"SEGMENT_89edafd6-a7f9-38e7-8f01-df908c506fb8"
+		],
+		"allocationParameters": {
+			"HOURLY_ALLOCATIONS": "TRUE",
+			"TOTAL_ALLOCATIONS": "FALSE",
+			"CHILD_ALLOCATIONS": "TRUE",
+			"AGGREGATE_CHARGES_HOURLY": "TRUE"
+		},
+		"tariffs": [
+			{
+			"tariffId": "84546",
+			"effectiveDate": "2015-01-01",
+			"endDate": "",
+			"disableDemandFlag": "true"
+		}
+		]
+	  }
+	]
+}

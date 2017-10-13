@@ -1,0 +1,492 @@
+package com.ge.current.em.automation.ui;
+
+import static org.junit.Assert.assertTrue;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.http.HttpStatus;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.ge.current.em.automation.provider.APMDataProvider;
+import com.ge.current.em.automation.util.APMTestUtil;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class APMPutTest extends APMTestUtil {
+
+	private static final Log logger = LogFactory.getLog(APMPutTest.class);
+	private static final String JSON_FILE_PATH = "src/main/resources/test-suite/data/apmpatch/";
+	public static final String APM_SERVICE_URL = "apm_service_url";
+	public static final String ENTERPRISE_PATTERN = "ENTERPRISE";
+	public static final String ASSET_KEY_PATTERN = "ASSET";
+	public static final String REGION_KEY_PATTERN = "REGION";
+	public static final String SEGMENT_KEY_PATTERN = "SEGMENT";
+	public static final String SITE_KEY_PATTERN = "SITE";
+	public static final String ENTERPRISE_ID = "/ENTERPRISE_4b7f97fd-318f-32f8-998e-ed2252112793";
+	public static final String invalidENTERPRISE_ID = "/ENTERPRISE_d337fe64-69f1-30d3-b9fc";
+	public static final String ENTERPRISE_PROPERTIES_URI = "/ENTERPRISE_4b7f97fd-318f-32f8-998e-ed2252112793/properties";
+	public static final String ENTERPRISE_LOCATION_URI = "/ENTERPRISE_4b7f97fd-318f-32f8-998e-ed2252112793/locations";
+	public static final String SITE_PROPERTIES_URI = "/SITE_6c2cb2e2-1c68-351e-9134-c859ee76430f/properties";
+	public static final String INVALID_SITES_ID = "/SITE_445e96b3-9977-32f6-bc2c-56833f7ba245";
+	public static final String SITE_LOCATIONS_URI = "/SITE_6c2cb2e2-1c68-351e-9134-c859ee76430f/locations";
+	public static final String UPDATE_SITE_URI = "/SITE_6c2cb2e2-1c68-351e-9134-c859ee76430f";
+	public static final String UPDATE_Segment_URI = "/SEGMENT_9729cb65-774c-3519-8d7d-5571d6eb2b5f/properties";
+	public static final String UPDATE_TypeProp_URI = "/ASSET_TYPE_a39dd9fc-08df-3565-b884-a79ac377ab8d/properties";
+	public static final String UPDATE_TagProp_URI = "/TAG_8149e9c2-6370-36a3-b73b-a36ff2c682ca/properties";
+	public static final String UPDATE_AssetTags_URI = "/ASSET_eb8e07d9-26b3-3a9d-8eba-73e2e1b56d83/tags";
+	public static final String UPDATE_AssetProps_URI = "/ASSET_eb8e07d9-26b3-3a9d-8eba-73e2e1b56d83/properties";
+	public static final String UPDATE_AssetParents_URI = "/ASSET_eb8e07d9-26b3-3a9d-8eba-73e2e1b56d83/parents";
+
+	
+	@Test
+	public void putEnterprisewithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_ID;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterprisePut.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "EnterprisePutNegativejson", dataProviderClass = APMDataProvider.class)
+	public void putEnterpriseNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_ID;
+		String enterprisedetails, jsonString;
+		Response response;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+	    responseCheck(uri, enterprisedetails, "patch", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putEnterpriseinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_ID;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterprisePut.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void putEnterpriseinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + invalidENTERPRISE_ID;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "Enterprise.json", p);
+	    responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+	}
+
+	@Test
+	public void postEnterprisewithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_ID;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putEnterprisePropertieswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_PROPERTIES_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseProperties.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "EnterprisePropertiesNegativejson", dataProviderClass = APMDataProvider.class)
+	public void putEnterprisePropertiesNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_PROPERTIES_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putEnterprisePropertiesinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_PROPERTIES_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseProperties.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void putEnterprisePropertiesinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + invalidENTERPRISE_ID + "/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseProperties.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+		
+	}
+
+	@Test
+	public void postEnterprisePropertieswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_PROPERTIES_URI;
+	    responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putEnterpriseLocationwithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_LOCATION_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseLocation.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "EnterpriseLocationNegativejson", dataProviderClass = APMDataProvider.class)
+	public void putEnterpriseLocationNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_LOCATION_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+        responseCheck(uri, enterprisedetails, "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putEnterpriseLocationinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_LOCATION_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseLocation.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void putEnterpriseLocationinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + invalidENTERPRISE_ID + "/locations";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "EnterpriseLocation.json", p);
+	    responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+	}
+
+	@Test
+	public void postEnterpriseLocationwithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/enterprises" + ENTERPRISE_LOCATION_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void putSitePropertieswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_PROPERTIES_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteProperties.json", p);
+		responseCheck(uri, enterprisedetails, "patch", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "SitePropertiesNegativejson", dataProviderClass = APMDataProvider.class)
+	public void putSitePropertiesNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_PROPERTIES_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, enterprisedetails, "patch", HttpStatus.BAD_REQUEST.value(), "application/json");
+
+	}
+
+	@Test
+	public void putSitePropertiesinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_PROPERTIES_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteProperties.json", p);
+		responseCheck(uri,enterprisedetails , "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+
+	}
+
+	@Test
+	public void putSitePropertiesinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + INVALID_SITES_ID + "/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteProperties.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+		
+	}
+
+	@Test
+	public void postSitePropertieswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_PROPERTIES_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+		
+	}
+
+	@Test
+	public void putSiteLocationswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_LOCATIONS_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteLocations.json", p);
+		responseCheck(uri, enterprisedetails, "patch", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "SiteLocationsNegativejson", dataProviderClass = APMDataProvider.class)
+	public void putSiteLocationsNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_LOCATIONS_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri,enterprisedetails , "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+
+		
+	}
+
+	@Test
+	public void putSiteLocationsinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_LOCATIONS_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteLocations.json", p);
+		responseCheck(uri, enterprisedetails, "patch", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+
+		
+	}
+
+	@Test
+	public void putSiteLocationsinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + INVALID_SITES_ID + "/locations";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "SiteLocations.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+
+	}
+
+	@Test
+	public void postSiteLocationswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + SITE_LOCATIONS_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+
+	}
+
+	@Test
+	public void putUpdateSitewithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + UPDATE_SITE_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "UpdateSite.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateSegmentjson", dataProviderClass = APMDataProvider.class)
+	public void putUpdateSiteNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + UPDATE_SITE_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+
+	}
+
+	@Test
+	public void putUpdateSiteinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + UPDATE_SITE_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "UpdateSite.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void putUpdateSiteinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + INVALID_SITES_ID;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "UpdateSite.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");		
+	}
+
+	@Test
+	public void postUpdateSitewithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/sites" + UPDATE_SITE_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateSegmentPropertieswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/segments" + UPDATE_Segment_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutSegment.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateSitejson", dataProviderClass = APMDataProvider.class)
+	public void updateSegmentPropertiesNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/segments" + UPDATE_Segment_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");}
+	
+
+	@Test
+	public void updateSegmentPropertiesinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/segments" + UPDATE_Segment_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutSegment.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void updateSegmentPropertiesinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/segments" + "/SEGMENT_b9a206d3-465b-374c-9658/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutSegment.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");	
+	}
+
+	@Test
+	public void updateSegmentPropertieswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/segments" + UPDATE_Segment_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateTypePropertieswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/types" + UPDATE_TypeProp_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTypeProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateTypepropjson", dataProviderClass = APMDataProvider.class)
+	public void updateTypePropertiesNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/types" + UPDATE_TypeProp_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateTypePropertiesinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/types" + UPDATE_TypeProp_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTypeProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void updateTypePropertiesinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/types" + "/ASSET_TYPE_b9a206d3-465b-374c-9658/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTypeProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");	
+	}
+
+	@Test
+	public void updatetypePropertieswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/types" + UPDATE_TypeProp_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateTagPropertieswithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/tags" + UPDATE_TagProp_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTagProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateTagpropjson", dataProviderClass = APMDataProvider.class)
+	public void updateTagPropertiesNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/tags" + UPDATE_TagProp_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateTagPropertiesinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/tags" + UPDATE_TagProp_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTagProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void updateTagPropertiesinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/tags" + "/TAG_8149e9c2-6370-36a3-b73b/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutTagProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");	
+	}
+
+	@Test
+	public void updateTagPropertieswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/tags" + UPDATE_TagProp_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetTagwithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetTags_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetTag.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateAssetTagjson", dataProviderClass = APMDataProvider.class)
+	public void updateAssetTagNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetTags_URI;
+		String enterprisedetails, jsonString;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetTaginvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetTags_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetTag.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+	}
+
+	@Test
+	public void updateAssetTaginvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + "/ASSET_eb986f95-5fc0-314d-b514/tags";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetTag.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetTagwithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetTags_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetPropwithvalidinputs() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetProps_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateAssetPropjson", dataProviderClass = APMDataProvider.class)
+	public void updateAssetPropNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetProps_URI;
+		String enterprisedetails, jsonString;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetPropinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetProps_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+
+	}
+
+	@Test
+	public void updateAssetPropinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + "/ASSET_eb986f95-5fc0-314d-b514/properties";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetProp.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetPropwithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetProps_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetParentswithvalidinputs() throws Throwable {
+
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetParents_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetParent.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.OK.value(), "application/json");
+
+	}
+
+	@Parameters({ "Filename" })
+	@Test(dataProvider = "UpdateAssetparentsjson", dataProviderClass = APMDataProvider.class)
+	public void updateAssetParentsNegativeCase(String filename) throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetParents_URI;
+		String enterprisedetails, jsonString;
+		enterprisedetails = readPayloadFile(JSON_FILE_PATH + filename, p);
+        responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetParentsinvalidContentType() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetParents_URI;
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetParent.json", p);
+	    responseCheck(uri, enterprisedetails, "put", HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "text/plain");
+
+	}
+
+	@Test
+	public void updateAssetParentsinvalidID() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + "/ASSET_1adc524d-213c-3dc9-a20b/parents";
+		String enterprisedetails = readPayloadFile(JSON_FILE_PATH + "PutAssetParent.json", p);
+		responseCheck(uri, enterprisedetails, "put", HttpStatus.NOT_FOUND.value(), "application/json");
+	}
+
+	@Test
+	public void updateAssetParentswithnullbody() throws Throwable {
+		String uri = getProperty(APM_SERVICE_URL) + "/assets" + UPDATE_AssetParents_URI;
+		responseCheck(uri, "", "put", HttpStatus.BAD_REQUEST.value(), "application/json");
+	}
+
+}

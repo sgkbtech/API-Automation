@@ -1,0 +1,10 @@
+{
+	"list": [
+		
+		{
+		 "parentSourceKey": "${apm.assetModel.parent}",
+		"name": "AHU_MODEL",
+      	 "type": "ASSET_MODEL_TYPE"
+		}
+		]
+}

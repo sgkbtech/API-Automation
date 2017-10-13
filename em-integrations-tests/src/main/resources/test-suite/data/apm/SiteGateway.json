@@ -1,0 +1,27 @@
+{
+  "list": [
+    {
+      "name": "Test Site Gateway",
+      "externalRefId": "JaceID ${dummy}",
+      "hostname": "3.39.67.70",
+      "port": "${dummy}",
+      "username": "leslie",
+      "secret": "password",
+      "manufacturer": "Trane",
+      "code": "JACE",
+      "serialNumber": "${dummy}",
+      "fromDate": "2017-03-06T08:00:00-0000",
+      "thruDate": "2019-03-06T08:00:00-0000",
+      "description": "Jace 001 in the office",
+      "properties": [
+        {
+          "id": "TEST_PROP_GATEWAY",
+          "value": [
+            "aha"
+          ],
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
+}

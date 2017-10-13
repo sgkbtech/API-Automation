@@ -1,0 +1,44 @@
+{
+  "list": [
+    {
+      "externalRefId": "testSite",
+      "classificationCode": "SITE",
+      "parentSourceKey": "${parentSourceKey}",
+      "parentClassificationCode": "ENTERPRISE",
+      "name": "testSite",
+      "alias": "testSite",
+      "rating": "23",
+      "description": "testSite",
+      "locations": [
+        {
+          "parentLocationSourceKey": null,
+          "name": "testSite",
+          "classificationCode": "SITE",
+          "alias": "testSite",
+          "geoCoordinates": {
+            "latitude": 37.7673179,
+            "longitude": -121.9584364,
+            "elevation": 450,
+            "timezone": "America/Los_Angeles"
+          },
+          "postalAddress": {
+            "streetLine1": "2623 Camino Ramon",
+            "streetLine2": "",
+            "country": "USA",
+            "region": "WEST",
+            "state": "CA",
+            "city": "San Ramon",
+            "postalCode": "94583"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "id": "SqFt",
+          "type": "NUMBER",
+          "value": [
+            "21656"
+          ]
+        }
+      ]
+    }]}

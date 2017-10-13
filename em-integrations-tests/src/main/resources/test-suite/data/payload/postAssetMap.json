@@ -1,0 +1,8 @@
+[ 	{	 		
+	"csvName": "${CSV_Name}",
+	"assetModelTypeSourceKey": "${ASSET_MODEL_TYPE_SK}",
+	"enterpriseSourceKey": "${ENTERPRISE_SK}",
+	"assetType": "${ASSET_TYPE}",
+	"assetModelType": "${ASSET_MODEL_TYPE}",
+	"assetTypeSourceKey": "${ASSET_TYPE_SK}"
+}]

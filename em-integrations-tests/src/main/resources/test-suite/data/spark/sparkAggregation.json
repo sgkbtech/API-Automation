@@ -1,0 +1,25 @@
+{  
+   "clientSparkVersion":"1.4.2",
+   "mainClass":"com.ge.current.ie.analytics.batch.SparkBatchMain",
+   "appResource":"file:/app/em/aggregations/airflow/ie-spark-em-2.0.0.jar",
+   "appArgs":[  
+      "--spring.profiles.active=cloud-em",
+      "${refBatch}",
+      "${startTime}",
+      "201702172300",
+      "UTC"
+   ],
+   "environmentVariables":{  
+      "SPARK_ENV_LOADED":"1"
+   },
+   "action":"CreateSubmissionRequest",
+   "sparkProperties":{  
+      "spark.driver.supervise":"false",
+      "spark.app.name":"${sparkAppName}",
+      "spark.submit.deployMode":"cluster",
+      "spark.cores.max":3,
+      "spark.jars":"file:/app/em/aggregations/airflow/ie-spark-em-2.0.0.jar",
+      "spark.eventLog.enabled":"true",
+      "spark.executor.memory":"4g"
+   }
+}

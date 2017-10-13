@@ -1,0 +1,32 @@
+{
+"type" : "ROOTENTERPRISE",
+"id":"E1",
+"children" : [
+{
+"type":"REGION",
+"id":"R1",
+"children" : [{
+"type": "SITE",
+"id":"S1"
+}
+]
+},
+{
+"type":"REGION",
+"id":"R2",
+"children" : [{
+"type": "ENTERPRISE",
+"id":"E3"
+}
+]
+},
+{"type":"SITE",
+"id":"S2",
+"children" : [{
+"type": "SEGMENT",
+"id":"SG1"
+}
+]
+}
+]
+}

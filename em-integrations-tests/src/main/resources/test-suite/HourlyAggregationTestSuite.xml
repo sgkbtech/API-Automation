@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="HourlyAggregationTest" verbose="1" preserve-order="true">
+	<test name="AHUHourlyCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.AggregationTest">
+		   <methods>
+        		<include name="testMetadataInHourlyAggregationForFE2EAHU"/>
+        		<include name="testMetadataInHourlyAggregationForFE2EAHUSite"/>
+        		<include name="testMetadataInHourlyAggregationForFE2EAHUEnterprise"/>
+        		<include name="testMetadataInHourlyAggregationForFE2EAHUSegment"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+	<test name="SubmeterHourlyCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ingestion.AggregationTest">
+		   <methods>
+        		<include name="testMetadataInHourlyAggregationForFE2ESubmeter"/>
+        		<include name="testMetadataInHourlyAggregationForFE2ESubmeterSite"/>
+        		<include name="testMetadataInHourlyAggregationForFE2ESubmeterEnterprise"/>
+        		<include name="testMetadataInHourlyAggregationForFE2ESubmeterSegment"/>
+        	</methods>
+     	 </class>
+    </classes>
+	</test>
+</suite>

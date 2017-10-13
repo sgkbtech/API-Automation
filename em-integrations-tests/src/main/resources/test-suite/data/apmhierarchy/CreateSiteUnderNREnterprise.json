@@ -1,0 +1,41 @@
+{
+  "list": [
+    {
+      "parentSourceKey": "${apm.NRUnderNREnterprise}",
+      "parentClassificationCode": "ENTERPRISE",
+      "name": "${apm.site.name}",
+      "locations": [
+        {
+          "parentLocationSourceKey": null,
+          "areaInSqft": 1,
+          "name": "ST_PG5",
+          "locationType": "PTHER",
+          "classificationCode": "OTHER",
+          "alias": "ST_PG5",
+          "geoCoordinates": {
+            "latitude": 37.7673179,
+            "longitude": -121.9584364,
+            "elevation": 450,
+            "timezone": "Pacific/Midway"
+          },
+          "postalAddress": {
+            "streetLine1": "2623 Camino Ramon",
+            "streetLine2": "",
+            "country": "USA",
+            "region": "WEST",
+            "state": "CA",
+            "city": "San Ramon",
+            "postalCode": "94583"
+          },
+          "localCoordinates": {
+            "locationAliases": "Camino Ramon, Bishop Ranch 3",
+            "horizontalRange": 20,
+            "verticalRange": 26,
+            "elevation": 20,
+            "angle": 83.12
+          }
+        }
+      ]
+    }
+    ]
+}

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="EMJaceIntegrationTest" verbose="1" preserve-order="true">
+	<parameter name="config-file" value="${envType}.configuration.properties"></parameter>
+  	<test name="KPIHealthCheck">
+	 <classes>
+		 <class name="com.ge.current.em.automation.ui.UIFunctionalTest">
+     	 </class>
+    </classes>
+	</test>
+</suite>

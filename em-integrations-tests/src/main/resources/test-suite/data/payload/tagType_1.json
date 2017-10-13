@@ -1,0 +1,25 @@
+{
+  "list":
+          [
+            {
+
+              "name": "tag1",
+              "type": "TAG_TYPE",
+              "description": "Temperature of the air returning from the space to the unit",
+              "fromDate": "2016-12-01T00:00:00+0000",
+              "thruDate": "9999-12-31T00:00:00+0000",
+              "version": "1.00",
+              "properties": []
+            },
+            {
+
+              "name": "tag2",
+              "type": "TAG_TYPE",
+              "description": "Temperature of the air exiting the unit into the space",
+              "fromDate": "2016-12-01T00:00:00+0000",
+              "thruDate": "9999-12-31T00:00:00+0000",
+              "version": "1.00",
+              "properties": []
+            }
+          ]
+}

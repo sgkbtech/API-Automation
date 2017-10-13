@@ -1,0 +1,29 @@
+{
+"list": [
+    {
+         "parentSourceKey": "${apm.asset.siteSourceKey}",
+          "parentClassificationCode": "SITE",
+           "name": "${apm.asset.name}",
+           "gatewaySourceKey": "${apm.asset.gatewaySourceKey}",
+           "identifier": {
+                        "serialNumber": "${dummy}",
+                        "virtualSerialNumber": "02233440",
+                        "macAddress": "si20:6t04:dr34",
+                        "externalRefId": "EXT REF ID"
+           },
+           "catalog": {
+                        "type": "SUBMETER",
+                        "model": "SUBMETER_MODEL"
+           },
+            "properties": [
+	    {
+	      "id": "haystackMapping",
+	      "type": "STRING",
+	      "value": [
+	        "[{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_SUBMETER/points/zoneElecMeterEnergySensor\",\"pointName\":\"zoneElecMeterEnergySensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_SUBMETER/points/zoneElecMeterPowerSensor\",\"pointName\":\"zoneElecMeterPowerSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_SUBMETER/points/zoneElecMeterCurrentSensor\",\"pointName\":\"zoneElecMeterCurrentSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_SUBMETER/points/zoneElecMeterPfSensor\",\"pointName\":\"zoneElecMeterPfSensor\"},{\"pointId\":\"/Drivers/ModbusAsyncNetwork/${csv.siteName}_SUBMETER/points/zoneElecMeterVoltSensor\",\"pointName\":\"zoneElecMeterVoltSensor\"}]"
+	      ]
+	    }
+	  ]
+    }
+ ]
+}    

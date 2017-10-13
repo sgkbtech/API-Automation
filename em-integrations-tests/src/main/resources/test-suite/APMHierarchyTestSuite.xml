@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="APMHierarchyTestSuite" verbose="1" preserve-order="true">
+  	<test name="APMHierarchyTest">
+	 <classes>
+		 <class name="com.ge.current.em.automation.apm.hierarchytesting.APMHierarchyTest">
+		 </class>
+    </classes>
+	</test>
+</suite>
